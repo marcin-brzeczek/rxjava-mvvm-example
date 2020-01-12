@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fillViewport="true">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/background"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/bg_orange_gradient"
+		android:fitsSystemWindows="true"
+		tools:context=".ui.main.MainActivity">
+
+		<ImageView
+			android:id="@+id/compassNeedle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:focusableInTouchMode="true"
+			android:rotation="180"
+			android:src="@drawable/needle"
+			app:layout_constraintBottom_toBottomOf="@id/compassLayout"
+			app:layout_constraintLeft_toLeftOf="@id/compassLayout"
+			app:layout_constraintRight_toRightOf="@id/compassLayout"
+			app:layout_constraintTop_toTopOf="@id/compassLayout" />
+
+		<FrameLayout
+			android:id="@+id/compassLayout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/addDirection"
+			app:layout_constraintVertical_bias="0.15">
+
+			<ImageView
+				android:id="@+id/arrow"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:src="@drawable/ic_angle_up"
+				android:visibility="invisible" />
+
+			<ImageView
+				android:id="@+id/compassDisc2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="30dp"
+				android:src="@drawable/compass_disc" />
+		</FrameLayout>
+
+		<ImageView
+			android:id="@+id/houses"
+			android:layout_width="@dimen/match_constraints"
+			android:layout_height="180dp"
+			android:scaleType="fitXY"
+			android:src="@drawable/houses"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent" />
+
+		<TextView
+			android:id="@+id/direction"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@color/colorWhite"
+			android:textSize="@dimen/standard_text"
+			app:layout_constraintLeft_toLeftOf="@id/compassLayout"
+			app:layout_constraintRight_toRightOf="@id/compassLayout"
+			app:layout_constraintTop_toBottomOf="@id/compassLayout"
+			tools:text="150° South East" />
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/latLayout"
+			android:layout_width="@dimen/match_constraints"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/standard_margin"
+			android:layout_marginTop="@dimen/standard_margin"
+			android:layout_marginEnd="@dimen/standard_margin_half"
+			android:hint="@string/latitude"
+			android:textColorHint="@color/colorWhite"
+			app:layout_constraintEnd_toStartOf="@+id/lngLayout"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/lat"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:backgroundTint="@color/colorWhite"
+				android:inputType="numberSigned|numberDecimal"
+				android:nextFocusDown="@+id/lng"
+				android:textColor="@color/colorWhite" />
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/lngLayout"
+			android:layout_width="@dimen/match_constraints"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/standard_margin_half"
+			android:layout_marginTop="@dimen/standard_margin"
+			android:layout_marginEnd="@dimen/standard_margin"
+			android:hint="@string/longitude"
+			android:textColorHint="@color/colorWhite"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/latLayout"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/lng"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:backgroundTint="@color/colorWhite"
+				android:inputType="numberSigned|numberDecimal"
+				android:textColor="@color/colorWhite" />
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<Button
+			android:id="@+id/addDirection"
+			android:layout_width="@dimen/match_constraints"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/standard_margin"
+			android:layout_marginTop="@dimen/standard_margin"
+			android:layout_marginEnd="@dimen/standard_margin"
+			android:background="@drawable/bg_button"
+			android:text="@string/add"
+			android:textAllCaps="false"
+			android:textColor="@color/colorWhite"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/latLayout" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

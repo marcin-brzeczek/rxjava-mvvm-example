@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Compass</string>
+    <string name="direction">%1$d° %2$s</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="north">North</string>
+    <string name="south">South</string>
+    <string name="west">West</string>
+    <string name="east">East</string>
+    <string name="north_east">North East</string>
+    <string name="south_east">South East</string>
+    <string name="south_west">South West</string>
+    <string name="north_west">North West</string>
+    <string name="incorrect_latitude">Incorrect latitude</string>
+    <string name="incorrect_longitude">Incorrect longitude</string>
+	<string name="add">Add Direction</string>
+
+    <string name="localization_dialog_title">Localization</string>
+    <string name="localization_dialog_message">Localization is turned off. Do you want to turn it on?</string>
+    <string name="latitude_longitude_error">Enter correct latitude and longitude</string>
+    <string name="location_error">Your location is unavailable for compass</string>
+</resources>
